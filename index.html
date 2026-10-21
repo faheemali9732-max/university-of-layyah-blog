@@ -1,0 +1,1988 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>University of Layyah Blog | Official Student &amp; Academic Journal</title>
+    <link rel="icon" type="image/png" href="images/ul-logo.png">
+    
+    <style>
+
+        :root {
+            --primary-dark: #0a2f17;
+            --primary-green: #14532d;
+            --primary-emerald: #166534;
+            --primary-light: #22c55e;
+            --primary-surface: #f0fdf4;
+            --accent-gold: #c89524;
+            --accent-gold-light: #e5b342;
+            --accent-gold-hover: #9b7012;
+            --accent-gold-subtle: #fef9ed;
+            --text-dark: #0f172a;
+            --text-muted: #475569;
+            --text-light: #64748b;
+            --white: #ffffff;
+            --gray-50: #f8fafc;
+            --gray-100: #f1f5f9;
+            --gray-200: #e2e8f0;
+            --gray-300: #cbd5e1;
+            --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.08), 0 1px 2px rgba(0, 0, 0, 0.04);
+            --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.06);
+            --shadow-lg: 0 10px 25px -5px rgba(0, 0, 0, 0.12), 0 8px 10px -6px rgba(0, 0, 0, 0.08);
+            --shadow-xl: 0 20px 35px -10px rgba(10, 47, 23, 0.22);
+            --radius-sm: 6px;
+            --radius-md: 10px;
+            --radius-lg: 16px;
+            --radius-full: 9999px;
+            --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            --font-main: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            --font-heading: Georgia, "Times New Roman", Cambria, serif;
+        }
+
+
+        *, *::before, *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            font-size: 16px;
+        }
+
+        body {
+            font-family: var(--font-main);
+            color: var(--text-dark);
+            background-color: var(--gray-50);
+            line-height: 1.65;
+            -webkit-font-smoothing: antialiased;
+            overflow-x: hidden;
+        }
+
+        a {
+            color: var(--primary-emerald);
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        a:hover {
+            color: var(--accent-gold);
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin-left: auto;
+            margin-right: auto;
+            padding-left: 24px;
+            padding-right: 24px;
+        }
+
+        .section-header {
+            text-align: center;
+            max-width: 740px;
+            margin: 0 auto 50px auto;
+        }
+
+        .section-tag {
+            display: inline-block;
+            font-size: 0.82rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1.8px;
+            color: var(--accent-gold);
+            background-color: var(--accent-gold-subtle);
+            padding: 6px 16px;
+            border-radius: var(--radius-full);
+            margin-bottom: 12px;
+            border: 1px solid rgba(200, 149, 36, 0.25);
+        }
+
+        .section-title {
+            font-family: var(--font-heading);
+            font-size: 2.3rem;
+            color: var(--primary-dark);
+            line-height: 1.25;
+            margin-bottom: 16px;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 3px;
+            background: linear-gradient(90deg, var(--primary-green), var(--accent-gold));
+            margin: 14px auto 0 auto;
+            border-radius: var(--radius-full);
+        }
+
+        .section-subtitle {
+            font-size: 1.05rem;
+            color: var(--text-muted);
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            padding: 12px 28px;
+            font-size: 0.95rem;
+            font-weight: 600;
+            border-radius: var(--radius-md);
+            border: 2px solid transparent;
+            cursor: pointer;
+            transition: var(--transition);
+            text-decoration: none;
+            letter-spacing: 0.3px;
+        }
+
+        .btn-primary {
+            background-color: var(--accent-gold);
+            color: var(--primary-dark);
+            box-shadow: 0 4px 14px rgba(200, 149, 36, 0.35);
+        }
+
+        .btn-primary:hover {
+            background-color: var(--accent-gold-light);
+            color: var(--primary-dark);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(200, 149, 36, 0.45);
+        }
+
+        .btn-outline {
+            background-color: transparent;
+            color: var(--white);
+            border-color: rgba(255, 255, 255, 0.8);
+        }
+
+        .btn-outline:hover {
+            background-color: var(--white);
+            color: var(--primary-dark);
+            border-color: var(--white);
+            transform: translateY(-2px);
+        }
+
+        .btn-green {
+            background-color: var(--primary-green);
+            color: var(--white);
+        }
+
+        .btn-green:hover {
+            background-color: var(--primary-dark);
+            color: var(--white);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 18px rgba(20, 83, 45, 0.3);
+        }
+
+        section {
+            padding: 90px 0;
+            scroll-margin-top: 80px;
+        }
+        .hero-wrapper {
+            position: relative;
+            min-height: 100vh;
+            background: url('images/ul-campus.jpg') center center / cover no-repeat;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .hero-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(
+                135deg,
+                rgba(10, 47, 23, 0.92) 0%,
+                rgba(15, 60, 30, 0.86) 50%,
+                rgba(8, 28, 15, 0.94) 100%
+            );
+            z-index: 1;
+        }
+        .top-announcement {
+            position: relative;
+            z-index: 10;
+            background-color: rgba(8, 30, 15, 0.95);
+            border-bottom: 1px solid rgba(200, 149, 36, 0.3);
+            color: #d1fae5;
+            font-size: 0.84rem;
+            padding: 8px 0;
+        }
+
+        .top-announcement-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+
+        .top-announcement-badge {
+            background-color: var(--accent-gold);
+            color: var(--primary-dark);
+            font-weight: 700;
+            padding: 2px 8px;
+            border-radius: var(--radius-sm);
+            font-size: 0.72rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            display: inline-block;
+            margin-right: 8px;
+        }
+
+        .top-links {
+            display: flex;
+            gap: 20px;
+            align-items: center;
+        }
+
+        .top-links a {
+            color: #d1fae5;
+            font-size: 0.84rem;
+        }
+
+        .top-links a:hover {
+            color: var(--accent-gold-light);
+        }
+
+        /* Navigation Header */
+        .site-header {
+            position: relative;
+            z-index: 10;
+            padding: 18px 0;
+            background: rgba(10, 47, 23, 0.70);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+        }
+
+        .nav-container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 20px;
+        }
+
+        .brand-link {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            text-decoration: none;
+        }
+
+        .brand-logo {
+            width: 58px;
+            height: 58px;
+            object-fit: contain;
+            filter: drop-shadow(0 2px 8px rgba(0,0,0,0.4));
+            background: var(--white);
+            border-radius: var(--radius-full);
+            padding: 4px;
+            border: 2px solid var(--accent-gold);
+        }
+
+        .brand-text h1 {
+            font-family: var(--font-heading);
+            font-size: 1.28rem;
+            color: var(--white);
+            line-height: 1.15;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+        }
+
+        .brand-text span {
+            display: block;
+            font-size: 0.75rem;
+            color: var(--accent-gold-light);
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            font-weight: 600;
+        }
+
+        /* Pure CSS Checkbox Toggle for Mobile Navigation */
+        .nav-toggle-checkbox {
+            display: none;
+        }
+
+        .nav-toggle-label {
+            display: none;
+            flex-direction: column;
+            justify-content: space-between;
+            width: 30px;
+            height: 22px;
+            cursor: pointer;
+            z-index: 20;
+        }
+
+        .nav-toggle-label span {
+            display: block;
+            height: 3px;
+            width: 100%;
+            background-color: var(--white);
+            border-radius: 3px;
+            transition: var(--transition);
+        }
+
+        .nav-menu {
+            display: flex;
+            align-items: center;
+            gap: 24px;
+        }
+
+        .nav-menu a {
+            color: rgba(255, 255, 255, 0.9);
+            font-size: 0.92rem;
+            font-weight: 500;
+            padding: 6px 2px;
+            position: relative;
+            letter-spacing: 0.3px;
+        }
+
+        .nav-menu a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: var(--accent-gold);
+            transition: var(--transition);
+        }
+
+        .nav-menu a:hover {
+            color: var(--accent-gold-light);
+        }
+
+        .nav-menu a:hover::after {
+            width: 100%;
+        }
+
+        .nav-cta {
+            background: linear-gradient(135deg, var(--accent-gold), var(--accent-gold-hover));
+            color: var(--primary-dark) !important;
+            padding: 8px 20px !important;
+            border-radius: var(--radius-md);
+            font-weight: 700 !important;
+            box-shadow: 0 3px 10px rgba(200, 149, 36, 0.3);
+        }
+
+        .nav-cta::after {
+            display: none !important;
+        }
+
+        .nav-cta:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(200, 149, 36, 0.4);
+            color: var(--primary-dark) !important;
+        }
+        .hero-content {
+            position: relative;
+            z-index: 5;
+            padding: 80px 0 60px 0;
+            text-align: center;
+            color: var(--white);
+        }
+
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 8px 22px;
+            background: rgba(20, 83, 45, 0.65);
+            border: 1px solid rgba(200, 149, 36, 0.5);
+            border-radius: var(--radius-full);
+            color: var(--accent-gold-light);
+            font-size: 0.88rem;
+            font-weight: 600;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            margin-bottom: 24px;
+            backdrop-filter: blur(8px);
+        }
+
+        .hero-badge .pulse-dot {
+            width: 8px;
+            height: 8px;
+            background-color: var(--accent-gold);
+            border-radius: 50%;
+            display: inline-block;
+            box-shadow: 0 0 10px var(--accent-gold);
+        }
+
+        .hero-title {
+            font-family: var(--font-heading);
+            font-size: 3.5rem;
+            font-weight: 700;
+            line-height: 1.15;
+            max-width: 950px;
+            margin: 0 auto 24px auto;
+            color: var(--white);
+            text-shadow: 0 3px 12px rgba(0, 0, 0, 0.5);
+        }
+
+        .hero-title .highlight {
+            color: var(--accent-gold-light);
+            background: linear-gradient(180deg, #fceecb 0%, #e5b342 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hero-lead {
+            font-size: 1.22rem;
+            max-width: 760px;
+            margin: 0 auto 36px auto;
+            color: #e2e8f0;
+            line-height: 1.7;
+            text-shadow: 0 1px 4px rgba(0, 0, 0, 0.4);
+        }
+
+        .hero-actions {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 18px;
+            flex-wrap: wrap;
+            margin-bottom: 50px;
+        }
+        .hero-strip {
+            position: relative;
+            z-index: 5;
+            background: rgba(10, 47, 23, 0.90);
+            border-top: 1px solid rgba(200, 149, 36, 0.3);
+            padding: 24px 0;
+            backdrop-filter: blur(10px);
+        }
+
+        .hero-stats-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+            text-align: center;
+        }
+
+        .stat-item {
+            border-right: 1px solid rgba(255, 255, 255, 0.15);
+            padding: 0 12px;
+        }
+
+        .stat-item:last-child {
+            border-right: none;
+        }
+
+        .stat-number {
+            font-family: var(--font-heading);
+            font-size: 1.95rem;
+            font-weight: 700;
+            color: var(--accent-gold-light);
+            line-height: 1.1;
+        }
+
+        .stat-label {
+            font-size: 0.82rem;
+            color: #d1fae5;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-top: 4px;
+        }
+
+        .vc-section {
+            background-color: var(--white);
+            position: relative;
+        }
+
+        .vc-card {
+            background: var(--white);
+            border-radius: var(--radius-lg);
+            box-shadow: var(--shadow-xl);
+            border: 1px solid var(--gray-200);
+            overflow: hidden;
+            display: grid;
+            grid-template-columns: 420px 1fr;
+            transition: var(--transition);
+        }
+
+        .vc-image-container {
+            position: relative;
+            background: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary-emerald) 100%);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 44px 30px;
+            text-align: center;
+            color: var(--white);
+        }
+
+        .vc-image-container::before {
+            content: '';
+            position: absolute;
+            inset: 15px;
+            border: 2px dashed rgba(200, 149, 36, 0.45);
+            border-radius: var(--radius-md);
+            pointer-events: none;
+        }
+
+        .vc-frame {
+            position: relative;
+            width: 250px;
+            height: 300px;
+            border-radius: var(--radius-md);
+            overflow: hidden;
+            border: 4px solid var(--accent-gold);
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.35);
+            margin-bottom: 22px;
+            background-color: #0d3819;
+        }
+
+        .vc-frame img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: top center;
+        }
+
+        .vc-title-block h3 {
+            font-family: var(--font-heading);
+            font-size: 1.35rem;
+            color: var(--accent-gold-light);
+            margin-bottom: 6px;
+            letter-spacing: 0.3px;
+        }
+
+        .vc-title-block .vc-role {
+            font-size: 0.92rem;
+            color: #d1fae5;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1.2px;
+        }
+
+        .vc-title-block .vc-inst {
+            font-size: 0.82rem;
+            color: rgba(255, 255, 255, 0.75);
+            margin-top: 4px;
+        }
+
+        .vc-content {
+            padding: 48px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .vc-quote-badge {
+            font-size: 3.5rem;
+            line-height: 1;
+            font-family: Georgia, serif;
+            color: var(--accent-gold);
+            margin-bottom: -15px;
+            opacity: 0.6;
+        }
+
+        .vc-tagline {
+            font-family: var(--font-heading);
+            font-size: 1.45rem;
+            color: var(--primary-dark);
+            margin-bottom: 22px;
+            line-height: 1.35;
+        }
+
+        .vc-message-body p {
+            font-size: 1.02rem;
+            color: var(--text-dark);
+            line-height: 1.8;
+            margin-bottom: 16px;
+            text-align: justify;
+        }
+
+        .vc-highlight-box {
+            background-color: var(--primary-surface);
+            border-left: 4px solid var(--primary-emerald);
+            padding: 16px 20px;
+            margin: 20px 0;
+            border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+            font-style: italic;
+            color: var(--primary-dark);
+            font-size: 1.02rem;
+            line-height: 1.6;
+        }
+
+        .vc-signature-area {
+            margin-top: 24px;
+            padding-top: 20px;
+            border-top: 1px solid var(--gray-200);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+
+        .vc-signature-name {
+            font-family: var(--font-heading);
+            font-weight: 700;
+            font-size: 1.15rem;
+            color: var(--primary-dark);
+        }
+
+        .vc-signature-name span {
+            display: block;
+            font-family: var(--font-main);
+            font-size: 0.84rem;
+            color: var(--text-muted);
+            font-weight: 500;
+        }
+
+        .vc-verified-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            font-size: 0.78rem;
+            color: var(--primary-emerald);
+            background: var(--primary-surface);
+            border: 1px solid rgba(22, 101, 52, 0.25);
+            padding: 5px 12px;
+            border-radius: var(--radius-full);
+            font-weight: 600;
+        }
+
+
+        .articles-section {
+            background-color: var(--gray-50);
+        }
+
+        .articles-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 36px;
+        }
+
+        .article-card {
+            background-color: var(--white);
+            border-radius: var(--radius-lg);
+            overflow: hidden;
+            box-shadow: var(--shadow-md);
+            border: 1px solid var(--gray-200);
+            display: flex;
+            flex-direction: column;
+            transition: var(--transition);
+        }
+
+        .article-card:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-xl);
+            border-color: rgba(200, 149, 36, 0.4);
+        }
+
+        .article-image-box {
+            position: relative;
+            height: 270px;
+            overflow: hidden;
+            background-color: var(--gray-200);
+        }
+
+        .article-image-box img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.6s ease;
+        }
+
+        .article-card:hover .article-image-box img {
+            transform: scale(1.06);
+        }
+
+        .article-category {
+            position: absolute;
+            top: 18px;
+            left: 18px;
+            background-color: var(--primary-dark);
+            color: var(--accent-gold-light);
+            font-size: 0.75rem;
+            font-weight: 700;
+            padding: 5px 14px;
+            border-radius: var(--radius-full);
+            text-transform: uppercase;
+            letter-spacing: 0.8px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+            border: 1px solid rgba(200, 149, 36, 0.4);
+        }
+
+        .article-content {
+            padding: 32px;
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1;
+        }
+
+        .article-meta {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            font-size: 0.84rem;
+            color: var(--text-light);
+            margin-bottom: 14px;
+            border-bottom: 1px solid var(--gray-100);
+            padding-bottom: 12px;
+        }
+
+        .article-title {
+            font-family: var(--font-heading);
+            font-size: 1.55rem;
+            color: var(--primary-dark);
+            line-height: 1.32;
+            margin-bottom: 14px;
+            transition: var(--transition);
+        }
+
+        .article-card:hover .article-title {
+            color: var(--primary-emerald);
+        }
+
+        .article-desc {
+            font-size: 0.98rem;
+            color: var(--text-muted);
+            line-height: 1.7;
+            margin-bottom: 24px;
+            flex-grow: 1;
+        }
+
+        .article-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-top: 16px;
+            border-top: 1px solid var(--gray-100);
+        }
+
+        .read-more-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            font-weight: 700;
+            color: var(--primary-emerald);
+            font-size: 0.92rem;
+            padding: 8px 16px;
+            border-radius: var(--radius-sm);
+            background-color: var(--primary-surface);
+            transition: var(--transition);
+        }
+
+        .read-more-btn:hover {
+            background-color: var(--primary-emerald);
+            color: var(--white);
+            transform: translateX(4px);
+        }
+
+        .article-modal {
+            position: fixed;
+            inset: 0;
+            background: rgba(10, 30, 15, 0.85);
+            backdrop-filter: blur(6px);
+            -webkit-backdrop-filter: blur(6px);
+            z-index: 1000;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            padding: 24px;
+            overflow-y: auto;
+        }
+
+        .article-modal:target {
+            display: flex;
+        }
+
+        .article-modal-card {
+            background: var(--white);
+            max-width: 820px;
+            width: 100%;
+            max-height: 90vh;
+            border-radius: var(--radius-lg);
+            overflow-y: auto;
+            position: relative;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.45);
+            animation: modalFadeIn 0.3s ease;
+        }
+
+        @keyframes modalFadeIn {
+            from {
+                opacity: 0;
+                transform: scale(0.96) translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1) translateY(0);
+            }
+        }
+
+        .modal-close-btn {
+            position: sticky;
+            top: 18px;
+            right: 18px;
+            float: right;
+            width: 38px;
+            height: 38px;
+            background: var(--primary-dark);
+            color: var(--white);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.25rem;
+            font-weight: bold;
+            box-shadow: var(--shadow-md);
+            z-index: 20;
+            margin: 16px 16px -40px 0;
+        }
+
+        .modal-close-btn:hover {
+            background: #b91c1c;
+            color: var(--white);
+        }
+
+        .modal-image {
+            width: 100%;
+            height: 340px;
+            object-fit: cover;
+        }
+
+        .modal-content-body {
+            padding: 36px 40px;
+        }
+
+        .modal-content-body h2 {
+            font-family: var(--font-heading);
+            font-size: 1.9rem;
+            color: var(--primary-dark);
+            margin-bottom: 12px;
+            line-height: 1.3;
+        }
+
+        .modal-meta {
+            font-size: 0.85rem;
+            color: var(--accent-gold);
+            font-weight: 600;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .modal-content-body p {
+            font-size: 1.02rem;
+            line-height: 1.8;
+            color: var(--text-dark);
+            margin-bottom: 18px;
+            text-align: justify;
+        }
+
+        .modal-content-body ul {
+            margin: 16px 0 24px 20px;
+            list-style: disc;
+        }
+
+        .modal-content-body li {
+            margin-bottom: 8px;
+            color: var(--text-muted);
+            line-height: 1.65;
+        }
+
+        .quick-links-section {
+            background-color: var(--white);
+            position: relative;
+        }
+
+        .links-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 26px;
+        }
+
+        .link-card {
+            background-color: var(--gray-50);
+            border: 1px solid var(--gray-200);
+            border-radius: var(--radius-md);
+            padding: 28px;
+            display: flex;
+            flex-direction: column;
+            transition: var(--transition);
+            position: relative;
+        }
+
+        .link-card:hover {
+            background-color: var(--white);
+            border-color: var(--accent-gold);
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .link-icon-box {
+            width: 52px;
+            height: 52px;
+            background: linear-gradient(135deg, var(--primary-surface) 0%, #dcfce7 100%);
+            border: 1px solid rgba(22, 101, 52, 0.2);
+            border-radius: var(--radius-md);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            margin-bottom: 18px;
+            color: var(--primary-emerald);
+        }
+
+        .link-card:hover .link-icon-box {
+            background: linear-gradient(135deg, var(--accent-gold) 0%, var(--accent-gold-hover) 100%);
+            color: var(--white);
+        }
+
+        .link-title {
+            font-family: var(--font-heading);
+            font-size: 1.25rem;
+            color: var(--primary-dark);
+            margin-bottom: 8px;
+            font-weight: 700;
+        }
+
+        .link-desc {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            line-height: 1.6;
+            margin-bottom: 20px;
+            flex-grow: 1;
+        }
+
+        .link-action {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            font-size: 0.88rem;
+            font-weight: 600;
+            color: var(--primary-emerald);
+        }
+
+        .link-card:hover .link-action {
+            color: var(--accent-gold-hover);
+        }
+
+        .about-section {
+            background-color: var(--primary-surface);
+            position: relative;
+        }
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1.1fr 0.9fr;
+            gap: 48px;
+            align-items: center;
+        }
+
+        .about-text h3 {
+            font-family: var(--font-heading);
+            font-size: 1.85rem;
+            color: var(--primary-dark);
+            margin-bottom: 18px;
+            line-height: 1.3;
+        }
+
+        .about-text p {
+            font-size: 1.02rem;
+            color: var(--text-muted);
+            line-height: 1.8;
+            margin-bottom: 18px;
+            text-align: justify;
+        }
+
+    
+        .disclaimer-card {
+            background-color: var(--white);
+            border: 2px solid var(--accent-gold);
+            border-radius: var(--radius-lg);
+            padding: 32px;
+            box-shadow: var(--shadow-lg);
+            position: relative;
+        }
+
+        .disclaimer-header {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 16px;
+            padding-bottom: 14px;
+            border-bottom: 1px solid var(--gray-200);
+        }
+
+        .disclaimer-icon {
+            font-size: 1.7rem;
+            color: var(--accent-gold);
+        }
+
+        .disclaimer-header h4 {
+            font-family: var(--font-heading);
+            font-size: 1.25rem;
+            color: var(--primary-dark);
+        }
+
+        .disclaimer-card p {
+            font-size: 0.94rem;
+            color: var(--text-dark);
+            line-height: 1.7;
+            margin-bottom: 16px;
+        }
+
+        .disclaimer-note {
+            background-color: var(--accent-gold-subtle);
+            border-left: 3px solid var(--accent-gold);
+            padding: 12px 16px;
+            border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+            font-size: 0.88rem;
+            color: #78350f;
+            margin-bottom: 20px;
+        }
+
+        .disclaimer-cta {
+            display: block;
+            text-align: center;
+        }
+
+        .footer-area {
+            background-color: var(--primary-dark);
+            color: #e2e8f0;
+            padding-top: 80px;
+            border-top: 4px solid var(--accent-gold);
+            position: relative;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 1.2fr 1fr 1.3fr;
+            gap: 48px;
+            margin-bottom: 60px;
+        }
+
+        .footer-brand {
+            display: flex;
+            flex-direction: column;
+            gap: 18px;
+        }
+
+        .footer-logo-wrap {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+        }
+
+        .footer-logo {
+            width: 64px;
+            height: 64px;
+            background: var(--white);
+            border-radius: var(--radius-full);
+            padding: 4px;
+            border: 2px solid var(--accent-gold);
+        }
+
+        .footer-logo-title h3 {
+            font-family: var(--font-heading);
+            font-size: 1.25rem;
+            color: var(--white);
+            line-height: 1.2;
+        }
+
+        .footer-logo-title span {
+            font-size: 0.75rem;
+            color: var(--accent-gold-light);
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+        }
+
+        .footer-about-text {
+            font-size: 0.92rem;
+            color: #cbd5e1;
+            line-height: 1.7;
+        }
+
+        .footer-socials {
+            display: flex;
+            gap: 10px;
+            margin-top: 8px;
+        }
+
+        .social-link {
+            width: 40px;
+            height: 40px;
+            background-color: rgba(255, 255, 255, 0.08);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            border-radius: var(--radius-sm);
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--white);
+            font-size: 0.88rem;
+            font-weight: 700;
+            transition: var(--transition);
+        }
+
+        .social-link:hover {
+            background-color: var(--accent-gold);
+            color: var(--primary-dark);
+            border-color: var(--accent-gold);
+            transform: translateY(-3px);
+        }
+
+        .footer-widget-title {
+            font-family: var(--font-heading);
+            font-size: 1.25rem;
+            color: var(--white);
+            margin-bottom: 22px;
+            position: relative;
+            padding-bottom: 10px;
+        }
+
+        .footer-widget-title::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 40px;
+            height: 2px;
+            background-color: var(--accent-gold);
+        }
+
+        .contact-info-list li {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            margin-bottom: 16px;
+            font-size: 0.92rem;
+            color: #cbd5e1;
+            line-height: 1.5;
+        }
+
+        .contact-icon {
+            color: var(--accent-gold);
+            font-size: 1.1rem;
+            margin-top: 2px;
+            flex-shrink: 0;
+        }
+
+        .contact-info-list a {
+            color: #cbd5e1;
+        }
+
+        .contact-info-list a:hover {
+            color: var(--accent-gold-light);
+        }
+
+        /* Contact Form */
+        .footer-form-card {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.12);
+            border-radius: var(--radius-md);
+            padding: 24px;
+        }
+
+        .form-notice {
+            background: rgba(200, 149, 36, 0.15);
+            border: 1px solid rgba(200, 149, 36, 0.35);
+            color: #fef3c7;
+            font-size: 0.8rem;
+            padding: 8px 12px;
+            border-radius: var(--radius-sm);
+            margin-bottom: 16px;
+            line-height: 1.45;
+        }
+
+        .contact-form {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 12px;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+        }
+
+        .form-group label {
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: #cbd5e1;
+            letter-spacing: 0.3px;
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 10px 14px;
+            background: rgba(255, 255, 255, 0.08);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: var(--radius-sm);
+            color: var(--white);
+            font-family: var(--font-main);
+            font-size: 0.9rem;
+            transition: var(--transition);
+        }
+
+        .form-control:focus {
+            outline: none;
+            background: rgba(255, 255, 255, 0.12);
+            border-color: var(--accent-gold);
+            box-shadow: 0 0 0 3px rgba(200, 149, 36, 0.25);
+        }
+
+        .form-control::placeholder {
+            color: #94a3b8;
+        }
+
+        textarea.form-control {
+            resize: vertical;
+            min-height: 80px;
+        }
+
+        .form-submit-btn {
+            background: linear-gradient(135deg, var(--accent-gold) 0%, var(--accent-gold-hover) 100%);
+            color: var(--primary-dark);
+            border: none;
+            padding: 12px;
+            border-radius: var(--radius-sm);
+            font-weight: 700;
+            font-size: 0.95rem;
+            cursor: pointer;
+            transition: var(--transition);
+            margin-top: 4px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+        }
+
+        .form-submit-btn:hover {
+            background: linear-gradient(135deg, var(--accent-gold-light) 0%, var(--accent-gold) 100%);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(200, 149, 36, 0.4);
+        }
+
+        /* Copyright Bar */
+        .footer-bottom {
+            background-color: #051b0d;
+            border-top: 1px solid rgba(255, 255, 255, 0.08);
+            padding: 20px 0;
+            font-size: 0.84rem;
+            color: #94a3b8;
+        }
+
+        .footer-bottom-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+
+        .footer-bottom-links {
+            display: flex;
+            gap: 20px;
+        }
+
+        .footer-bottom-links a {
+            color: #94a3b8;
+        }
+
+        .footer-bottom-links a:hover {
+            color: var(--accent-gold-light);
+        }
+
+        @media (max-width: 1024px) {
+            .hero-title {
+                font-size: 2.8rem;
+            }
+
+            .vc-card {
+                grid-template-columns: 1fr;
+            }
+
+            .vc-image-container {
+                padding: 36px 20px;
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .footer-grid > :nth-child(3) {
+                grid-column: span 2;
+            }
+
+            .about-grid {
+                grid-template-columns: 1fr;
+                gap: 36px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .nav-toggle-label {
+                display: flex;
+            }
+
+            .nav-menu {
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background-color: rgba(10, 47, 23, 0.98);
+                backdrop-filter: blur(14px);
+                flex-direction: column;
+                padding: 24px;
+                gap: 16px;
+                display: none;
+                border-bottom: 2px solid var(--accent-gold);
+                box-shadow: var(--shadow-xl);
+            }
+
+            .nav-toggle-checkbox:checked ~ .nav-menu {
+                display: flex;
+            }
+
+            .nav-toggle-checkbox:checked ~ .nav-toggle-label span:nth-child(1) {
+                transform: translateY(9.5px) rotate(45deg);
+            }
+
+            .nav-toggle-checkbox:checked ~ .nav-toggle-label span:nth-child(2) {
+                opacity: 0;
+            }
+
+            .nav-toggle-checkbox:checked ~ .nav-toggle-label span:nth-child(3) {
+                transform: translateY(-9.5px) rotate(-45deg);
+            }
+
+            .hero-title {
+                font-size: 2.2rem;
+            }
+
+            .hero-lead {
+                font-size: 1.05rem;
+            }
+
+            .hero-stats-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 16px;
+            }
+
+            .stat-item:nth-child(2) {
+                border-right: none;
+            }
+
+            .articles-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .links-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-grid > :nth-child(3) {
+                grid-column: span 1;
+            }
+
+            .form-row {
+                grid-template-columns: 1fr;
+            }
+
+            .vc-content {
+                padding: 28px 20px;
+            }
+
+            .top-announcement {
+                display: none;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero-title {
+                font-size: 1.85rem;
+            }
+
+            .section-title {
+                font-size: 1.75rem;
+            }
+
+            .btn {
+                width: 100%;
+            }
+
+            .hero-actions {
+                flex-direction: column;
+                width: 100%;
+            }
+
+            .hero-stats-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .stat-item {
+                border-right: none;
+                border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+                padding-bottom: 12px;
+            }
+
+            .stat-item:last-child {
+                border-bottom: none;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="hero-wrapper" id="home">
+        <div class="hero-overlay"></div>
+
+        <!-- Top Announcement Notification Bar -->
+        <div class="top-announcement">
+            <div class="container top-announcement-content">
+                <div>
+                    <span class="top-announcement-badge">Notice</span>
+                    <span>University of Layyah admissions &amp; merit lists are updated on the official university portal.</span>
+                </div>
+                <div class="top-links">
+                    <a href="tel:+920606920247">&#9742; +92 (0606) 920247</a>
+                    <a href="mailto:info@ul.edu.pk">&#9993; info@ul.edu.pk</a>
+                    <a href="https://www.ul.edu.pk/" target="_blank" rel="noopener noreferrer">Official Portal &nearr;</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Integrated Header Navigation -->
+        <header class="site-header">
+            <div class="container nav-container">
+                <a href="#home" class="brand-link">
+                    <img src="images/ul-logo.png" alt="University of Layyah Official Logo" class="brand-logo">
+                    <div class="brand-text">
+                        <h1>University of Layyah</h1>
+                        <span>Student &amp; Academic Blog</span>
+                    </div>
+                </a>
+
+                <!-- Pure CSS Mobile Hamburger Toggle -->
+                <input type="checkbox" id="nav-toggle" class="nav-toggle-checkbox">
+                <label for="nav-toggle" class="nav-toggle-label" aria-label="Toggle navigation menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </label>
+
+                <!-- Navigation Links in User-Specified Sequence -->
+                <nav class="nav-menu">
+                    <a href="#home">Home</a>
+                    <a href="#about">About</a>
+                    <a href="#articles">Articles</a>
+                    <a href="#vc-message">VC Message</a>
+                    <a href="#quick-links">Quick Links</a>
+                    <a href="#contact" class="nav-cta">Contact</a>
+                </nav>
+            </div>
+        </header>
+
+        <!-- Hero Content Area -->
+        <div class="hero-content">
+            <div class="container">
+                <div class="hero-badge">
+                    <span class="pulse-dot"></span>
+                    <span>Inspiring Minds &bull; Empowering Southern Punjab</span>
+                </div>
+                
+                <h2 class="hero-title">
+                    Welcome to the <span class="highlight">University of Layyah</span> Blog
+                </h2>
+                
+                <p class="hero-lead">
+                    Discover authentic campus stories, cutting-edge academic programs, student research achievements, and university development milestones at Layyah's premier seat of higher learning.
+                </p>
+
+                <div class="hero-actions">
+                    <a href="#articles" class="btn btn-primary">
+                        <span>Explore Featured Articles</span> &rarr;
+                    </a>
+                    <a href="#vc-message" class="btn btn-outline">
+                        <span>Vice-Chancellor's Message</span>
+                    </a>
+                    <a href="https://www.ul.edu.pk/" target="_blank" rel="noopener noreferrer" class="btn btn-outline">
+                        <span>Official Portal &nearr;</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="hero-strip">
+            <div class="container">
+                <div class="hero-stats-grid">
+                    <div class="stat-item">
+                        <div class="stat-number">5+</div>
+                        <div class="stat-label">Academic Faculties</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">30+</div>
+                        <div class="stat-label">Degree Programs</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">HEC</div>
+                        <div class="stat-label">Chartered &amp; Recognized</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">Punjab</div>
+                        <div class="stat-label">Katchehry Road, Layyah</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <section class="vc-section" id="vc-message">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Executive Leadership</span>
+                <h2 class="section-title">Vice-Chancellor's Message</h2>
+                <p class="section-subtitle">A visionary perspective guiding the academic, technological, and sustainable growth of the University of Layyah.</p>
+            </div>
+
+            <div class="vc-card">
+                <!-- VC Image & Credentials -->
+                <div class="vc-image-container">
+                    <div class="vc-frame">
+                        <img src="images/vice-chancellor.jpg" alt="Prof. Dr. Muhammad Zubair Abu Bakar - Vice Chancellor, University of Layyah">
+                    </div>
+                    <div class="vc-title-block">
+                        <h3>Prof. Dr. Muhammad Zubair Abu Bakar</h3>
+                        <div class="vc-role">Vice Chancellor</div>
+                        <div class="vc-inst">University of Layyah, Punjab, Pakistan</div>
+                    </div>
+                </div>
+
+                <!-- VC Official Message Content -->
+                <div class="vc-content">
+                    <div class="vc-quote-badge">&ldquo;</div>
+                    <h3 class="vc-tagline">
+                        Enlightening the Youth for Meaningful Lives, Entrepreneurship &amp; Global Excellence
+                    </h3>
+
+                    <div class="vc-message-body">
+                        <p>
+                            It is indeed an honor for me to be the Vice Chancellor of the University of Layyah (UL), Layyah. It was my passion to lead an institute of higher learning engaged in enlightening the youth to have a well-lived life alongwith opportunities for entrepreneurship and employment.
+                        </p>
+                        
+                        <p>
+                            I will try to contribute all my efforts to make this University the best one by enabling students and faculty through modern teaching methods, practical education &amp; collaborative research across the spectrum of challenges and opportunities prevailing over the globe.
+                        </p>
+
+                        <div class="vc-highlight-box">
+                            &ldquo;I welcome you to learn, explore and grow with the latest, updated and sustainability-oriented knowledge and skills to meet the competitive challenges of this modern era.&rdquo;
+                        </div>
+
+                        <p>
+                            I wish you a successful and promising educational journey with UL open to all genders and the students of all areas!
+                        </p>
+                    </div>
+
+                    <div class="vc-signature-area">
+                        <div class="vc-signature-name">
+                            Prof. Dr. Muhammad Zubair Abu Bakar
+                            <span>Vice Chancellor &bull; University of Layyah</span>
+                        </div>
+                        <div class="vc-verified-badge">
+                            &#10003; Verified Official Message Summary
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="articles-section" id="articles">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Campus Chronicles</span>
+                <h2 class="section-title">Latest University Articles</h2>
+                <p class="section-subtitle">In-depth insights into campus infrastructure, academic faculties, student initiatives, and university milestones.</p>
+            </div>
+
+            <div class="articles-grid">
+                
+                <!-- Article 1: Campus Infrastructure & Student Amenities -->
+                <article class="article-card">
+                    <div class="article-image-box">
+                        <img src="images/article-campus.jpg" alt="University of Layyah Campus Grounds and Academic Blocks">
+                        <span class="article-category">Campus &amp; Facilities</span>
+                    </div>
+                    <div class="article-content">
+                        <div class="article-meta">
+                            <span>&#128197; October 2026</span>
+                            <span>&#128205; Katchehry Road, Layyah</span>
+                            <span>&#9201; 4 min read</span>
+                        </div>
+                        <h3 class="article-title">
+                            Campus Evolution: Modern Infrastructure &amp; Student Resources at UL
+                        </h3>
+                        <p class="article-desc">
+                            The University of Layyah continues its rapid developmental transformation, establishing cutting-edge laboratories, an expanded central academic library, specialized medical health facilities, and dedicated transport networks connecting students across the Layyah district and surrounding regions.
+                        </p>
+                        <div class="article-footer">
+                            <span style="font-size: 0.85rem; color: var(--text-light); font-weight: 500;">By Student Editorial Team</span>
+                            <a href="#article-1-modal" class="read-more-btn">Read Full Article &rarr;</a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Article 2: Academic Programs & Emerging Faculties -->
+                <article class="article-card">
+                    <div class="article-image-box">
+                        <img src="images/article-education.jpg" alt="Faculty of Computing &amp; Engineering and Academic Programs at University of Layyah">
+                        <span class="article-category">Academics &amp; Research</span>
+                    </div>
+                    <div class="article-content">
+                        <div class="article-meta">
+                            <span>&#128197; October 2026</span>
+                            <span>&#127891; Degree Programs</span>
+                            <span>&#9201; 5 min read</span>
+                        </div>
+                        <h3 class="article-title">
+                            Academic Excellence: Expanding Faculties in Technology, Agriculture &amp; Sciences
+                        </h3>
+                        <p class="article-desc">
+                            With five robust faculties spanning Computing &amp; Engineering, Veterinary &amp; Animal Sciences, Agricultural Sciences &amp; Technology, Natural Sciences, and Management &amp; Social Sciences, the University of Layyah prepares graduates to lead technological, economic, and scientific transformation.
+                        </p>
+                        <div class="article-footer">
+                            <span style="font-size: 0.85rem; color: var(--text-light); font-weight: 500;">By Academic Affairs Desk</span>
+                            <a href="#article-2-modal" class="read-more-btn">Read Full Article &rarr;</a>
+                        </div>
+                    </div>
+                </article>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Pure CSS Modal for Article 1 -->
+    <div id="article-1-modal" class="article-modal">
+        <div class="article-modal-card">
+            <a href="#articles" class="modal-close-btn" title="Close article">&times;</a>
+            <img src="images/article-campus.jpg" alt="University of Layyah Campus" class="modal-image">
+            <div class="modal-content-body">
+                <div class="modal-meta">Campus &amp; Infrastructure &bull; University of Layyah Special Report</div>
+                <h2>Campus Evolution: Modern Infrastructure &amp; Student Resources at UL</h2>
+                <p>
+                    Nestled in the heart of Punjab on Katchehry Road, the University of Layyah (UL) has witnessed remarkable institutional and physical growth. Established to address the higher educational aspirations of southern Punjab, UL has rapidly built modern infrastructure tailored to multidisciplinary academic excellence.
+                </p>
+                <p>
+                    Key campus features that elevate student life include:
+                </p>
+                <ul>
+                    <li><strong>Central Academic Library:</strong> Offering extensive book collections, national and international journals, quiet reading zones, and digital repositories for scholarly research.</li>
+                    <li><strong>Modern Laboratories:</strong> Fully equipped computing, natural sciences, and agricultural labs supporting experiential learning and collaborative student-faculty research.</li>
+                    <li><strong>Student Support &amp; Health Care:</strong> An on-campus medical dispensary providing primary medical assistance and dedicated wellness support for learners.</li>
+                    <li><strong>District-Wide Transport:</strong> A dedicated bus and shuttle fleet ensuring safe and punctual transit for students and staff residing across remote and urban sectors of Layyah district.</li>
+                    <li><strong>Inauguration of Day Care Facilities:</strong> Modern family support amenities including recently inaugurated on-campus daycare services enabling working faculty and postgraduate scholars to thrive.</li>
+                </ul>
+                <p>
+                    The administration under Prof. Dr. Muhammad Zubair Abu Bakar remains committed to sustainable environmental practices, clean green campus landscaping, and high-speed campus internet connectivity.
+                </p>
+                <a href="#articles" class="btn btn-green" style="margin-top: 15px;">Close Article</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Pure CSS Modal for Article 2 -->
+    <div id="article-2-modal" class="article-modal">
+        <div class="article-modal-card">
+            <a href="#articles" class="modal-close-btn" title="Close article">&times;</a>
+            <img src="images/article-education.jpg" alt="University of Layyah Academic Faculties" class="modal-image">
+            <div class="modal-content-body">
+                <div class="modal-meta">Academics &amp; Curricula &bull; University of Layyah Special Report</div>
+                <h2>Academic Excellence: Expanding Faculties in Technology, Agriculture &amp; Sciences</h2>
+                <p>
+                    Higher education in the 21st century demands rigorous curricula paired with practical, problem-solving skills. The University of Layyah (UL) has crafted educational programs specifically structured to align with global technological shifts while addressing regional economic development in Punjab.
+                </p>
+                <p>
+                    The university currently encompasses five distinguished academic faculties:
+                </p>
+                <ul>
+                    <li><strong>Faculty of Computing &amp; Engineering:</strong> Fostering innovation in computer science, software engineering, and emerging information technologies that empower young developers and researchers.</li>
+                    <li><strong>Faculty of Agricultural Sciences and Technology:</strong> Leveraging Layyah’s rich agricultural ecosystem to advance crop sciences, agronomy, food sciences, and sustainable farming methods.</li>
+                    <li><strong>Faculty of Veterinary and Animal Sciences:</strong> Providing comprehensive veterinary education and livestock development research critical for rural animal health and agricultural productivity.</li>
+                    <li><strong>Faculty of Natural Sciences:</strong> Cultivating fundamental knowledge in physics, chemistry, mathematics, and biological disciplines through rigorous lab exploration.</li>
+                    <li><strong>Faculty of Management, Humanities &amp; Social Sciences:</strong> Preparing ethical leaders in business administration, economics, sociology, and language arts equipped for modern enterprise and governance.</li>
+                </ul>
+                <p>
+                    Through national institutional linkages, such as recent MOUs with prominent technological institutions like UET Lahore, UL continues to facilitate academic exchange, curriculum modernization, and career placement for its graduating cohorts.
+                </p>
+                <a href="#articles" class="btn btn-green" style="margin-top: 15px;">Close Article</a>
+            </div>
+        </div>
+    </div>
+
+    <section class="quick-links-section" id="quick-links">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Essential Portals</span>
+                <h2 class="section-title">Verified Quick Links</h2>
+                <p class="section-subtitle">Direct access to official University of Layyah administration portals, academic registries, and admissions.</p>
+            </div>
+
+            <div class="links-grid">
+                
+                <!-- Link 1: Official Main Website -->
+                <div class="link-card">
+                    <div class="link-icon-box">&#127963;</div>
+                    <h3 class="link-title">Official UL Website</h3>
+                    <p class="link-desc">Explore the primary institutional homepage for university governance, notifications, event calendars, and departmental announcements.</p>
+                    <a href="https://www.ul.edu.pk/" target="_blank" rel="noopener noreferrer" class="link-action">
+                        Visit ul.edu.pk &nearr;
+                    </a>
+                </div>
+
+                <!-- Link 2: Admissions Portal -->
+                <div class="link-card">
+                    <div class="link-icon-box">&#127891;</div>
+                    <h3 class="link-title">Online Admissions</h3>
+                    <p class="link-desc">Apply for undergraduate and postgraduate admissions, review eligibility criteria, admission timelines, and fee voucher generation.</p>
+                    <a href="https://ul.edu.pk/admissions" target="_blank" rel="noopener noreferrer" class="link-action">
+                        Admissions Portal &nearr;
+                    </a>
+                </div>
+
+                <!-- Link 3: Academic Faculties -->
+                <div class="link-card">
+                    <div class="link-icon-box">&#128218;</div>
+                    <h3 class="link-title">Academic Faculties</h3>
+                    <p class="link-desc">Discover academic departments, faculty profiles, degree program catalogs, and syllabus frameworks across all 5 faculties.</p>
+                    <a href="https://www.ul.edu.pk/faculty-detail/MTIwNA==/faculty-of-computing-engineering" target="_blank" rel="noopener noreferrer" class="link-action">
+                        Browse Faculties &nearr;
+                    </a>
+                </div>
+
+                <!-- Link 4: UMS Login Portal -->
+                <div class="link-card">
+                    <div class="link-icon-box">&#128187;</div>
+                    <h3 class="link-title">Student UMS Portal</h3>
+                    <p class="link-desc">Access the University Management System (UMS) for student course registration, attendance tracking, and semester examination results.</p>
+                    <a href="https://www.ul.edu.pk/login" target="_blank" rel="noopener noreferrer" class="link-action">
+                        UMS Login &nearr;
+                    </a>
+                </div>
+
+                <!-- Link 5: Public Notices & Merit Lists -->
+                <div class="link-card">
+                    <div class="link-icon-box">&#128227;</div>
+                    <h3 class="link-title">Notices &amp; Merit Lists</h3>
+                    <p class="link-desc">Check official administrative gazettes, tender notifications, career openings, and published scrutiny/merit lists.</p>
+                    <a href="https://ul.edu.pk/page/public-notices" target="_blank" rel="noopener noreferrer" class="link-action">
+                        View Public Notices &nearr;
+                    </a>
+                </div>
+
+                <!-- Link 6: University Contact Page -->
+                <div class="link-card">
+                    <div class="link-icon-box">&#128205;</div>
+                    <h3 class="link-title">Official Contact Desk</h3>
+                    <p class="link-desc">Locate university department directory numbers, registrar desk contacts, campus location maps, and institutional grievance lines.</p>
+                    <a href="https://www.ul.edu.pk/contact" target="_blank" rel="noopener noreferrer" class="link-action">
+                        Contact Page &nearr;
+                    </a>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section class="about-section" id="about">
+        <div class="container">
+            <div class="about-grid">
+                
+                <!-- Blog Purpose -->
+                <div class="about-text">
+                    <span class="section-tag">About The Project</span>
+                    <h2 class="section-title" style="text-align: left;">Promoting Academic Excellence &amp; Community Voices</h2>
+                    <p>
+                        The <strong>University of Layyah Blog</strong> was initiated by passionate learners and scholarly enthusiasts to foster an open, educational space highlighting student accomplishments, campus developments, and research initiatives emerging from Layyah, Punjab.
+                    </p>
+                    <p>
+                        Through structured analytical articles, interviews, event coverage, and resource directories, our mission is to celebrate higher learning, inspire local youth to pursue university education, and share positive narratives about educational innovation in southern Punjab.
+                    </p>
+                    <div style="margin-top: 24px;">
+                        <a href="#articles" class="btn btn-green">Read Student Stories</a>
+                    </div>
+                </div>
+
+                <!-- Explicit Disclaimer Box -->
+                <div class="disclaimer-card">
+                    <div class="disclaimer-header">
+                        <span class="disclaimer-icon">&#9888;</span>
+                        <h4>Independent Student Project Disclaimer</h4>
+                    </div>
+                    
+                    <p>
+                        <strong>Please Read Carefully:</strong> This website is an independent educational and student showcase project created for informational and web development demonstration purposes.
+                    </p>
+                    
+                    <div class="disclaimer-note">
+                        <strong>Important:</strong> This is <u>NOT</u> the official administration website of the University of Layyah.
+                    </div>
+
+                    <p>
+                        All administrative inquiries, official admission procedures, examination enrollments, fee payments, and formal transcripts must be processed exclusively through the official university portal at <a href="https://www.ul.edu.pk/" target="_blank" rel="noopener noreferrer" style="font-weight: 700; text-decoration: underline;">www.ul.edu.pk</a>.
+                    </p>
+
+                    <div class="disclaimer-cta">
+                        <a href="https://www.ul.edu.pk/" target="_blank" rel="noopener noreferrer" class="btn btn-primary" style="width: 100%;">
+                            Go to Official University Website (ul.edu.pk) &rarr;
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer-area" id="contact">
+        <div class="container">
+            <div class="footer-grid">
+                
+                <!-- Brand & Address Summary -->
+                <div class="footer-brand">
+                    <div class="footer-logo-wrap">
+                        <img src="images/ul-logo.png" alt="University of Layyah Emblem" class="footer-logo">
+                        <div class="footer-logo-title">
+                            <h3>University of Layyah</h3>
+                            <span>Student Community Journal</span>
+                        </div>
+                    </div>
+                    <p class="footer-about-text">
+                        A student-driven digital publication celebrating scholarship, innovation, and campus culture at the University of Layyah, Punjab, Pakistan.
+                    </p>
+                    <div class="footer-socials">
+                        <a href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer" class="social-link" title="Facebook">FB</a>
+                        <a href="https://www.youtube.com/" target="_blank" rel="noopener noreferrer" class="social-link" title="YouTube">YT</a>
+                        <a href="https://wa.me/+923078766389" target="_blank" rel="noopener noreferrer" class="social-link" title="WhatsApp">WA</a>
+                        <a href="mailto:info@ul.edu.pk" class="social-link" title="Official Email">&#9993;</a>
+                    </div>
+                </div>
+
+                <!-- Verified Contact Info -->
+                <div class="footer-contact-info">
+                    <h4 class="footer-widget-title">Official Contact</h4>
+                    <ul class="contact-info-list">
+                        <li>
+                            <span class="contact-icon">&#128205;</span>
+                            <div>
+                                <strong>Campus Address:</strong><br>
+                                University of Layyah, Katchehry Road, Layyah 31200, Punjab, Pakistan
+                            </div>
+                        </li>
+                        <li>
+                            <span class="contact-icon">&#9742;</span>
+                            <div>
+                                <strong>Telephone:</strong><br>
+                                <a href="tel:+920606920247">+92 (0606) 920247</a>
+                            </div>
+                        </li>
+                        <li>
+                            <span class="contact-icon">&#128241;</span>
+                            <div>
+                                <strong>Official WhatsApp:</strong><br>
+                                <a href="https://wa.me/+923078766389" target="_blank" rel="noopener noreferrer">+92 307 8766389</a>
+                            </div>
+                        </li>
+                        <li>
+                            <span class="contact-icon">&#9993;</span>
+                            <div>
+                                <strong>Official Email:</strong><br>
+                                <a href="mailto:info@ul.edu.pk">info@ul.edu.pk</a>
+                            </div>
+                        </li>
+                        <li>
+                            <span class="contact-icon">&#127760;</span>
+                            <div>
+                                <strong>Official Web:</strong><br>
+                                <a href="https://www.ul.edu.pk/" target="_blank" rel="noopener noreferrer">www.ul.edu.pk</a>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Contact Us Form -->
+                <div class="footer-form-wrapper">
+                    <h4 class="footer-widget-title">Contact Us</h4>
+                    
+                    <div class="footer-form-card">
+                        <!-- Technical Notice Explaining Backend Requirement -->
+                        <div class="form-notice">
+                            &#8505; <strong>Developer Note:</strong> This is a front-end HTML5/CSS3 prototype. An active backend handler or form service (e.g., Formspree, Formkeep, or PHP mailer) is required in production to process submitted messages.
+                        </div>
+
+                        <form class="contact-form" action="#contact" method="GET">
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="contact-name">Your Name *</label>
+                                    <input type="text" id="contact-name" name="name" class="form-control" placeholder="e.g. Ahmad Khan" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="contact-email">Email Address *</label>
+                                    <input type="email" id="contact-email" name="email" class="form-control" placeholder="name@domain.com" required>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="contact-subject">Subject *</label>
+                                <input type="text" id="contact-subject" name="subject" class="form-control" placeholder="e.g. Inquiry regarding Computing Faculty" required>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="contact-message">Message *</label>
+                                <textarea id="contact-message" name="message" class="form-control" rows="3" placeholder="Write your thoughts or inquiry here..." required></textarea>
+                            </div>
+
+                            <button type="submit" class="form-submit-btn">
+                                <span>Send Message</span> &#9993;
+                            </button>
+                        </form>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- Copyright Sub-Footer -->
+        <div class="footer-bottom">
+            <div class="container footer-bottom-content">
+                <div>
+                    &copy; 2026 University of Layyah Student Blog. An independent educational initiative. All official university logos &amp; emblems are property of the University of Layyah.
+                </div>
+                <div class="footer-bottom-links">
+                    <a href="#home">Back to Top &uarr;</a>
+                    <a href="#about">Disclaimer</a>
+                    <a href="https://www.ul.edu.pk/" target="_blank" rel="noopener noreferrer">Official Portal &nearr;</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
